@@ -46,11 +46,6 @@
                         <p>Thomas Bonfort <a href="mailto:tbonfort@terriscope.fr">tbonfort@terriscope.fr</a> <a href="https://twitter.com/tbonfort">@tbonfort</a></p>
                         <br/>
                         <p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0; margin:0 0 12px 0;" src="http://i.creativecommons.org/l/by/4.0/80x15.png" /></a><small>&nbsp;This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</small></p>
-                        <aside class="notes">
-                            <p>Good morning everybody.</p>
-                            <p>For those who don't know me already, my name is Stephan Meissl, I made my first steps with MapServer back in 2002, became committer in 2011, and last year the honor of being elected to the PSC. Co-founder of EOX in Vienna, Austria.</p>
-                            <p>Thomas, probably the currently most active MapServer developer, originally planned to be here but unfortunately couldn't make it.</p>
-                        </aside>
                     </section>
 
                     <section>
@@ -83,7 +78,7 @@
                             <li>2012: Addition of TinyOWS &amp; MapCache &rArr; MapServer Suite (v6.2)</li>
                             <li>2013: v6.4</li>
                             <li>2014: v7.0beta &amp; 20th anniversary</li>
-                            <li>2015: v7.0</li>
+                            <li>2015: v7.0 (beta2 released 07/2015)</li>
                         </ul>
                     </section>
 
@@ -139,7 +134,6 @@
                             <li>Implemented in a "Google Summer of Code" project</li>
                             <li>Interactivity important (rollover, events)</li>
                             <li>Supported by OpenLayers</li>
-                            <li>Not yet supported in MapCache</li>
                         </ul>
                     </section>
 
@@ -150,39 +144,6 @@
                         </ul>
                     </section>
 
-                    <section>
-                        <h2>HeatMaps</h2>
-                        <ul>
-                            <li>Vector to raster processing pipeline</li>
-                            <li>Interpolation and rendering parameters</li>
-                            <ul>
-                                <li>Automatic scaling</li>
-                                <li>Interpolation in color spaces RGB/HSL</li>
-                                <li>Weighting per attribute/expression</li>
-                            </ul>
-                            <li>Supports tile mode</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <img src="images/heatmap-hsl.png"/>
-                        <p>Interpolation in HSL color space</p>
-                    </section>
-                    <section>
-                        <img src="images/heatmap-hsl-10.png"/>
-                        <p>Interpolation in HSL color space</p>
-                    </section>
-                    <section>
-                        <img src="images/heatmap-rgb.png"/>
-                        <p>Interpolation in RGB color space</p>
-                    </section>
-                    <section>
-                        <img src="images/heatmap-hsl-density.png"/>
-                        <p>Pure density</p>
-                    </section>
-                    <section>
-                        <img src="images/heatmap-hsl-fix-scale.png"/>
-                        <p>Setting a fixed scale</p>
-                    </section>
 
                     <section>
                         <h2>Javascript (V8) StyleItem/GeomTransfom</h2>
@@ -227,6 +188,50 @@ where st_intersects(the_geom, st_geomfromtext('wkt...'))
                     </section>
 
                     <section>
+                        <h2>WCS 2.0</h2>
+                        <ul>
+                            <li>Implements available extensions</li>
+                            <li>Passes all available CITE tests</li>
+                            <li>Official OGC WCS 2.0 Reference Implementation</li>
+                            <img src="images/wcs2.0_certificate.jpg"/>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>HeatMaps</h2>
+                        <ul>
+                            <li>Vector to raster processing pipeline</li>
+                            <li>Interpolation and rendering parameters</li>
+                            <ul>
+                                <li>Automatic scaling</li>
+                                <li>Interpolation in color spaces RGB/HSL</li>
+                                <li>Weighting per attribute/expression</li>
+                            </ul>
+                            <li>Supports tile mode</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <img src="images/heatmap-hsl.png"/>
+                        <p>Interpolation in HSL color space</p>
+                    </section>
+                    <section>
+                        <img src="images/heatmap-hsl-10.png"/>
+                        <p>Interpolation in HSL color space</p>
+                    </section>
+                    <section>
+                        <img src="images/heatmap-rgb.png"/>
+                        <p>Interpolation in RGB color space</p>
+                    </section>
+                    <section>
+                        <img src="images/heatmap-hsl-density.png"/>
+                        <p>Pure density</p>
+                    </section>
+                    <section>
+                        <img src="images/heatmap-hsl-fix-scale.png"/>
+                        <p>Setting a fixed scale</p>
+                    </section>
+
+                    <section>
                         <h2>Text rendering re-factoring</h2>
                         <ul>
                             <li>Before naive implementation duplicated for each back-end</li>
@@ -246,15 +251,15 @@ where st_intersects(the_geom, st_geomfromtext('wkt...'))
                     </section>
                     <section>
                         <img src="images/labelcache.png"/>
-                        <p>Improving performance</p>
+                        <p>Improving performance (notice the log scales)</p>
                     </section>
                     <section>
                         <img src="images/world-ml.png"/>
-                        <p>Example Malayalam</p>
+                        <p>Malayalam Example</p>
                     </section>
                     <section>
                         <img src="images/world-dz.png"/>
-                        <p>Example Tibéto-Birman</p>
+                        <p>Tibéto-Birman Example</p>
                     </section>
 
                     <section>
@@ -283,15 +288,6 @@ where st_intersects(the_geom, st_geomfromtext('wkt...'))
                             <li>All output generated by MapServer in UTF8</li>
                         </ul>
                     </section>
-                    <section>
-                        <h2>WCS 2.0</h2>
-                        <ul>
-                            <li>Implements available extensions</li>
-                            <li>Passes all available CITE tests</li>
-                            <li>Official OGC WCS 2.0 Reference Implementation</li>
-                            <img src="images/wcs2.0_certificate.jpg"/>
-                        </ul>
-                    </section>
                 </section>
 
 
@@ -307,7 +303,6 @@ where st_intersects(the_geom, st_geomfromtext('wkt...'))
                                  <li>Tile Management Features: seeding, recompression, interpolation
                               </ul>
                            <li>Native code: Fast and Efficient
-                           <li>Ease deployment: Demo interface
                    </section>
                    <section>
                       <h2>Standard Tile Addressing</h2>
@@ -334,7 +329,6 @@ where st_intersects(the_geom, st_geomfromtext('wkt...'))
                             <ul>
                                <li>Intercepts requests that can be served from cached tiles
                                <li>Forwards other requests to other upstream server(s)
-                               <li>Use Case</li>
                             </ul>
                    </section>
                    <section>
@@ -444,7 +438,7 @@ where st_intersects(the_geom, st_geomfromtext('wkt...'))
                     <section>
                         <h2>Sqlite Cache</h2>
                         <ul>
-                           <li>Stores tile data as blobs in an sqlite file
+                          <li>Stores tile data as blobs in an sqlite file (/path/to/{grid}/{tileset}.db)
                            <li>Can be split into multiple db files (per dimension, grid, tileset. Configurable max number of tiles per db)
                            <li>Pros
                               <ul>
