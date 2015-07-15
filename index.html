@@ -438,7 +438,7 @@ where st_intersects(the_geom, st_geomfromtext('wkt...'))
                     <section>
                         <h2>Sqlite Cache</h2>
                         <ul>
-                          <li>Stores tile data as blobs in an sqlite file (/path/to/{grid}/{tileset}.db)
+                          <li>Stores tile data as blobs in an sqlite file (/path/to/{grid}/{tileset}/{z}.db)
                            <li>Can be split into multiple db files (per dimension, grid, tileset. Configurable max number of tiles per db)
                            <li>Pros
                               <ul>
